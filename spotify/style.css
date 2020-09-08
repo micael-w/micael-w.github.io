@@ -1,0 +1,330 @@
+/*      INIT */
+
+/*      define colors */
+
+:root{
+    --blue: #2D46B9;
+    --green: #1ED760;
+    --black: #000000;
+    --darkergray: #222326;
+    --darkgray: #919496;
+    --lightgray: #D9DADC;
+    --white: #FFFFFF;
+}
+
+/*
+*  html5resetcss (used plugin "Html5 Reset Css" for this btw)
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+/*      import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+
+
+/*      GLOBAL CSS */
+
+/*      set font */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*      set link decoration */
+
+a{
+    text-decoration: none;
+}
+
+/* 
+set background color to black
+ */
+
+.header-container, .footer-container, .bottom-container{
+    background: var(--black);
+}
+
+/* 
+set margins
+ */
+
+.header-wrapper, .footer-wrapper, .bottom-wrapper{
+    margin: 0px 270px;
+/*     background: #eeeeee; */
+}
+
+/* 
+set all of these to flex
+ */
+
+.nav-right,
+.header-wrapper,
+.footer-container,
+.hero-container,
+.hero-title-container,
+.hero-content-container{
+    display: flex;
+}
+
+/* 
+set colors
+ */
+
+ .hero-container{
+     background: var(--blue);
+ }
+
+.nav-right-one a:hover,
+.nav-right-two a:hover,
+.footer-menu-link:hover,
+.social-media-link-item a:hover,
+.bottom-menu-left-link:hover,
+.bottom-menu-flag-box a:hover,
+h1,
+h3,
+.hero-tagline{
+    color: var(--green);
+}
+
+.footer-title,
+.bottom-menu-right-link,
+.bottom-menu-left a,
+.bottom-menu-flag-box a,
+.copyright{
+    color: var(--darkgray);
+}
+
+.nav-right-two a{
+    color: var(--lightgray);
+}
+
+.nav-right-one,
+.nav-right-one a,
+.footer-menu-item a,
+.social-media-link-item a{
+    color: var(--white);
+}
+
+h1{
+    font-size: 8rem;
+    font-weight: 800;
+}
+
+h5{
+    font-weight: 500;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+/*      LOCAL CSS */
+
+/*
+header css
+*/
+
+.header-container{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+}
+
+.header-wrapper{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right-item{
+    margin: 20px;
+    padding: 10px 0px;
+}
+
+.nav-right-one,
+.nav-right-two{
+    font-weight: 600;
+}
+
+/*
+hero css
+*/
+
+.hero-container{
+    background-image: url('./img/bursts.svg');
+    background-size: 165%;
+    background-position: 43% 0;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero-wrapper{
+    justify-self: center;
+    align-self: center;
+    width: 60%;
+/*     background: rgba(99,99,00,.5); */
+}
+
+.hero-title-container{
+/*     justify-content: center; */
+    flex-direction: column;
+/*     background: rgba(200,33,33,.5); */
+}
+
+.hero-title-top{
+    align-self: flex-start;
+}
+
+.hero-title-bottom{
+/*     background: #4f5; */
+    align-self: flex-end;
+}
+
+.hero-content-container{
+    flex-direction: column;
+    margin: 50px;
+}
+
+.hero-tagline{
+    align-self: center;
+    font-weight: 700;
+}
+
+.hero-content-button{
+    display: flex;
+    justify-content: center;
+}
+
+.buy-now{
+    justify-self: center;
+    background: var(--green);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 35px;
+    padding: 12px 50px;
+    border-radius: 20px;
+}
+
+.buy-now:hover{
+    background: var(--white);
+}
+
+/*
+footer css
+*/
+
+.footer-container{
+/*     background: rebeccapurple; */
+    padding: 60px 0px;
+}
+
+.footer-left{
+/*     background: violet; */
+    flex-grow: 1;
+}
+
+.footer-wrapper{
+    width: 100%;
+/*     background: wheat; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-center{
+    margin: 15px 10px;
+/*     background: yellowgreen; */
+    flex-grow: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.footer-center ul li{
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 80px;
+    margin-bottom: 24px;
+}
+
+.footer-title{
+    text-transform: uppercase;
+    font-size: 0.7rem !important;
+}
+
+.footer-right{
+    flex-grow: 2;
+    display: flex;
+/*     background: skyblue; */
+    justify-content: flex-end;
+}
+
+.social-media-links{
+    display: inline-flex; /*                    I HAVE NO IDEA WHY THIS WORKS AND FLEX DOESN'T */
+/*     background: yellow; */
+}
+
+.social-media-icons{
+    margin: 15px 0px;
+}
+
+.social-media-link-item{ /*                     I DON'T KNOW HOW TO CENTER THESE ICONS INSIDE THE CIRCLES */
+    display: flex;
+    background: var(--darkergray);
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 8px;
+    margin: 3px;
+}
+
+/*
+bottom menu
+*/
+
+.bottom-menu-flag{
+    display: flex;
+/*     background: pink; */
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.bottom-menu-flag-box img{
+    height: 20px;
+}
+
+.bottom-menu{
+    font-size: 0.8rem;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom-menu-left-item{
+    flex-grow: 3;
+    display: inline-flex;
+/*     background: cadetblue; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 16px;
+    padding-bottom: 50px;
+}
