@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+<body>
+    <div class="body-container">
+
+        <header>
+            
+<!-- ------------------------------- header -------------------------------- -->
+
+        <div class="contact-hero">
+            <h1>Oh hello there!</h1>
+        </div>
+
+<!-- --------------------------------- nav --------------------------------- -->
+        <div class="contact-nav">
+            <nav class="main-nav"> <!-- additional class to be able to target in contact page and set bg to white -->
+                <div class="main-nav-container">
+                    <ul class="nav-items">
+                        <li class="nav-item"><a href="#" class="nav-menu-item">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-menu-item">Our offer</a></li>
+                        <li class="nav-item"><a href="#" class="nav-menu-item">Why us</a></li>
+                        <li class="nav-item nav-selected"><a href="#" class="nav-menu-item">Contact</a></li>
+                    </ul>
+                </div> 
+            </nav>
+        </div>
+
+        </header>
+
+        <main>
+
+            <section class="form-section">
+                <div class="form-section-wrapper">
+                    <div class="form-left">
+                        <h1>What's on your<br>mind?</h1>
+                    </div>
+                    <div class="form-right">
+                        <div class="forms-wrapper">
+                            <form class="contact-us">
+                                <div class=email-form>
+                                    <label class="label-text" for="user_email">Your email: <abbr title="required">*</abbr></label> <!-- I added these since it should be required -->
+                                    <br>
+                                    <input id="user_email" type="email" name="user_email">
+                                </div>
+                                <div class="message-form">
+                                    <label class="label-text" for="user_message">Your message: <abbr title="required">*</abbr></label>
+                                    <br>
+                                    <textarea id="user_message" type="user_message" name="user_message" placeholder="Dear Insurance Company..."></textarea>
+                                </div>
+                                <a href="#" class="button button-small">send message</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <section class="map">
+                <div class="map-wrapper">
+                    <div class="map-box">
+                        <h1>Come visit us!</h1>
+                        <address>2219 Griffin street<br>
+                        San Fransisco</address>
+                    </div>
+                    <img class="needle" src="./img/needle.png" alt="">
+                </div>
+
+            </section>
+            <div class="empty-footer">
+
+            </div>
+        </footer>
+
+
+
+    </div>
+    
+</body>
+</html>

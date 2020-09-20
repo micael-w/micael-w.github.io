@@ -1,0 +1,736 @@
+/* -------------------------------------------------------------------------- */
+/*                                    init                                    */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                import fonts                                */
+/* -------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
+
+/* ------------------------------ set variables ----------------------------- */
+
+:root{
+
+/* ------------------------------- set colors ------------------------------- */
+
+    --lightblue: #C7DDEA;
+    --orange: #F17949;
+    --yellow: #FAB131;
+    --lightgray: #E5E5E5;
+    --lightergray: #EBEBEB;
+    --gray: #A9A19E;
+    --darkgray: #777574;
+    --black: #000000;
+    --black9: rgba(0, 0, 0, .9);
+    --black8: rgba(0, 0, 0, .8);
+    --black7: rgba(0, 0, 0, .7);
+    --black6: rgba(0, 0, 0, .6);
+    --black5: rgba(0, 0, 0, .5);
+    --black4: rgba(0, 0, 0, .4);
+    --black3: rgba(0, 0, 0, .3);
+    --white7: rgba(255, 255, 255, .7);
+    --white8: rgba(255, 255, 255, .8);
+    --white: #FFFFFF;
+    --darkerwhite: #FEFEFE;
+
+/* -------------------------------- set fonts ------------------------------- */
+
+    --serif: 'Frank Ruhl Libre', serif;
+    --sans: 'Fira Sans', sans-serif;
+
+/* --------------------- set numeric display properties --------------------- */
+
+    --landing-padding-left: 6.6rem;      /* this is to have h1s/buttons align */
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  css reset                                 */
+/* -------------------------------------------------------------------------- */
+
+/*
+*  html5resetcss
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+*{
+    box-sizing: border-box;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                     css                                    */
+/* -------------------------------------------------------------------------- */
+
+/* ----------------------------- global elements ---------------------------- */
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-family: var(--serif);
+    font-size: 2.8rem;
+}
+
+body{
+    background: var(--lightgray);
+}
+
+.button{
+    background: var(--white);
+    color: var(--black8);
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.75rem; /* (1rem / 16px) * 12px = 0.75rem */
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 100px;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------- set entire container to center --------------------- */
+
+/* ----------------------------- local elements ----------------------------- */
+
+.body-container{
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* --------------------------------- header --------------------------------- */
+
+.main-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 34rem; /* 544px / 16px = 34rem */
+}
+
+.hero-container{
+    background: var(--lightblue);
+    background-image: url('./img/family.png');
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 100%;
+}
+
+.header-hero{
+    padding-left: var(--landing-padding-left);
+    padding-top: 4.5rem;
+    height: 100%;
+    position: relative;
+}
+
+.hero-bottom-img{
+    background: red;
+    background-image: url('./img/family.png');
+    background-size: 100%;
+    background-position: -500 -550;
+    z-index: 1;
+}
+
+.hero-container p{
+    margin-top: 2rem;
+    font-weight: 700;
+    font-family: var(--sans);
+    color: var(--black6);
+    font-size: 0.876rem;
+    max-width: 60%;
+    line-height: 1.5rem;
+}
+
+.hero-container #p-white{            /* id instead of class for specificity */
+    color: var(--white);
+}
+
+.header-hero .button{
+    position: absolute;
+    margin-top: 5rem;
+
+}
+
+/* --------------------------- boxes to the right --------------------------- */
+
+.header-boxes{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 100%
+}
+
+.header-boxes p{
+    color: var(--black5);
+    font-weight: 700;
+    font-family: var(--sans);
+    font-size: 0.69rem;
+}
+
+.header-boxes h3{
+    color: var(--white);
+    font-family: var(--serif);
+    font-size: 2rem;
+    padding-top: 0.6rem;
+}
+
+.header-box-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--orange);
+}
+
+.header-box-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--yellow);
+}
+
+/* ----------------------------------- nav ---------------------------------- */
+
+
+.main-nav{
+    margin: auto;
+/*     background: pink; */
+    height: 5rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-items{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+/*     background: green; */
+}
+
+.nav-items a{
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--black4);
+}
+
+.nav-items .nav-selected a{ /* since this isn't a link I used a class to make it black/selected */
+    color: var(--black);
+}
+
+/* ---------------------------------- main ---------------------------------- */
+
+/* -------------------------------- main top -------------------------------- */
+
+.main-content-container{
+    display: grid;
+    height: 1500px;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.main-box-one-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-box-one-container{
+/*     background: red; */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-left: var(--landing-padding-left);
+    padding-top: 4.5rem;
+}
+
+.main-box-one-container .button{
+    position: absolute;
+    margin-top: 5rem;
+
+}
+
+.main-box-one-container h1{
+    color: var(--white);
+    padding-top: 3rem;
+    width: 70%;
+}
+
+.main-box-one-container p{
+    margin-top: 3rem;
+    font-family: var(--sans);
+    color: var(--black6);
+    font-size: 0.876rem;
+    font-weight: 500;
+    max-width: 57%;
+    line-height: 1.5rem;
+}
+
+.main-box-one-container .button{
+    position: absolute;
+    margin-top: 15rem;
+
+}
+
+.main-box-one{
+    background: var(--gray);
+}
+
+.main-box-two{
+/*     background: red; */
+    position: relative;
+    height: 100%;
+    width: 100%;
+/*     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+/* ---------------------------------- cards --------------------------------- */
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+/*     background: green; */
+}
+
+.card{
+    position: relative;
+    top: -18px;
+    display: grid;
+    grid-template-rows: 4fr 1fr 3fr;
+    background: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 16rem;
+    height: 20rem;
+}
+
+.card h4{
+    font-family: --serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--black9);
+    text-align: center;
+/*     background: wheat; */
+}
+
+.card p{
+    font-family: var(--sans);
+    font-weight: 700;
+    color: var(--black4);
+    font-size: 0.69rem;
+    text-align: center;
+}
+
+.card-top{
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 4px;
+    position: relative;
+    top: -20px;
+}
+
+.card-bottom{
+    width: 82%;
+    margin: 0 auto;
+}
+
+.card-one .card-top{
+    background: var(--lightblue);
+    background-image: url('./img/child.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 1.5rem;
+}
+.card-two .card-top{
+    background: var(--yellow);
+    background-image: url('./img/adult.png');
+    background-size: 42%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 1.5rem;
+}
+.card-three .card-top{
+    background: var(--orange);
+    background-image: url('./img/old.png');
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 2.5rem;
+}
+
+.main-box-two::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gray);
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+}
+
+.main-box-two::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--yellow);
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+}
+
+/* ------------------------------- main bottom ------------------------------ */
+
+.main-box-three{
+    background: var(--yellow);
+    display: flex;
+    justify-content: center;
+}
+
+.main-box-three-container{
+    width: 40%;
+    text-align: center;
+    padding-bottom: 10rem;
+}
+
+.main-box-three-container h1{
+    color: var(--white);
+    padding-top: 3rem;
+}
+
+.main-box-three-p{
+    padding-top: 3rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.876rem;
+    color: var(--black6);
+    line-height: 1.25rem;
+}
+
+/* ---------------------------------- steps --------------------------------- */
+
+.steps-box-container{
+    height: 43rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.steps-box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.steps-box-number{
+    position: relative;
+    margin-top: 2rem;
+    margin-left: -14rem;
+    font-family: var(--serif);
+    font-size: 2.19rem;
+    color: var(--black4);
+}
+
+.steps-box-content{
+    position: absolute;
+    font-family: var(--sans);
+    font-weight: 500;
+    line-height: 1.25rem;
+    font-size: 1.06rem;
+    color: var(--black7);
+    width: 60%;
+    text-align: center;
+    align-self: center;
+
+}
+
+.steps-box-one{
+    background: var(--lightblue);
+}
+
+.steps-box-one h1{
+    color: var(--black8);
+    text-align: center;
+    align-self: center;
+}
+
+.steps-box-three{
+    background: var(--lightergray);
+}
+
+.steps-box-five{
+    background: var(--orange);
+}
+
+.steps-box-container:nth-child(odd){              /* saves a few lines of css */
+    background: var(--white);
+}
+
+/* ---------------------------- take me up again ---------------------------- */
+
+.take-me-up{
+    height: 5rem;
+    background: var(--gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.take-me-up-container{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .take-me-up-container .fa-chevron-up{
+    width: 2rem;
+    height: 2rem;
+} */
+
+.take-me-up-container a{
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1.06rem;
+    color: var(--black7);
+}
+
+/* --------------------------------- footer --------------------------------- */
+
+.footer-empty-box{
+    height: 21.25rem;
+    background: var(--darkgray);
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                contact page                                */
+/* -------------------------------------------------------------------------- */
+
+/* ---------------------------------- hero ---------------------------------- */
+
+.contact-hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 22rem;
+    background-color: var(--lightblue);
+    background-image: url('./img/man-and-child.png');
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: bottom;
+}
+
+.contact-hero h1{
+    align-self: center;
+}
+
+/* ----------------------------------- nav ---------------------------------- */
+
+.contact-nav{
+    background: white;
+}
+
+/* ---------------------------------- form ---------------------------------- */
+
+.form-section{
+    background: var(--gray);
+    width: 100%;    
+    height: 30rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-section-wrapper{
+    margin-top: 5rem;
+    width: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-left{
+    margin-left: 8rem;
+}
+
+.form-left h1{
+    color: var(--white);
+}
+
+.form-right{
+/*     background: navajowhite; */
+    width: fit-content;
+}
+
+.label-text{
+    color: var(--white7);
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.contact-us{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us input{
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--black);
+}
+
+.email-form input{
+    background: var(--darkerwhite);
+    width: 20.875rem;
+    height: 2.5rem;
+    margin-top: 0.8rem;
+    border-radius: 2px;
+    border-width: 0;
+    margin-bottom: 2rem;
+}
+
+.message-form textarea{
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var(--black);
+    background: var(--darkerwhite);
+    width: 20.875rem;
+    height: 10.375rem;
+    margin-top: 0.8rem;
+    border-radius: 2px;
+    border-width: 0;
+    resize: none;
+}
+
+/* #user_message{
+   line-height: 40px;
+} */
+
+.contact-us a{
+    margin-top: 2rem;
+/*     background: red; */
+    align-self: flex-end;
+}
+
+.button-small{
+    font-size: 0.625rem;
+}
+
+/* ----------------------------------- map ---------------------------------- */
+
+.map{
+    background-image: url(./img/map-contact.png);
+    width: 100%;
+    height: 25.44rem;
+    position: relative;
+}
+
+.map-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.map-box{
+    position: absolute;
+    margin-top: 2.81rem;
+    margin-left: 5.38rem;
+    background: var(--yellow);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    width: 20.19rem;
+    height: 12.88rem;
+}
+
+.map-box h1{
+    color: var(--white);
+}
+
+.map-box address{
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--white8);
+}
+
+.needle{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+
+}
+
+.empty-footer{
+    width: 100%;
+    height: 21.25rem;
+    background: var(--darkgray);
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                               responsiveness                               */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*           ok this doesn't work that well, I think because of the           */
+/*           before/after pseudo elements used to display the cards           */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px){
+
+    .main-header{
+        grid-template-columns: 1fr;
+        height: 1300px;
+    }
+
+    .header-boxes{
+        height: 120%;
+    }
+
+    .main-nav{
+        visibility: hidden;
+    }
+
+    .cards{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .steps-box-container{
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
