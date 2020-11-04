@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+}
+
+h1{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.card{
+    background: #f3f3f3;
+    padding: 2rem;
+    min-width: 30%;
+    border-radius: 10px;
+}
+
+.error{
+    display: none;
+    justify-content: center;
+    font-size: .8rem;
+    letter-spacing: .1rem;
+    margin-bottom: 2rem;
+    color: white;
+    background: palevioletred;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.container{
+    width: 100vw;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit{
+    padding: .5rem;
+}
+
+.group{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.group-button{
+    justify-content: flex-end;
+}
+
+input, .stars-number{
+    margin-bottom: 1rem;
+    padding: .5rem;
+}
+
+.list-item{
+    margin-top: 1rem;
+}
+
+.list-item-row{
+    border-bottom: solid #eee;
+}
+
+.item-span{
+    font-weight: bold;
+}
+
+/* ---------------------------------- STARS --------------------------------- */
+
+.priority{
+    position: relative;
+}
+
+.priority label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.priority label .star {
+    color: transparent;
+}
+  
+.priority label:last-child .star {
+    color: #555;
+}
+
+.priority label{
+    top: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.priority label:nth-child(3) {
+    z-index: 1;
+}
+
+.priority label:nth-child(2) {
+    z-index: 2;
+}
+
+.priority label:nth-child(1) {
+    z-index: 3;
+}
+
+.priority:not(:hover) label input:checked ~ .star,
+.priority:hover label:hover input ~ .star {
+  color: #f90;
+}
+
+.priority label input:focus:not(:checked) ~ .star:last-child {
+  color: #555;
+}
