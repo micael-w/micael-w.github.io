@@ -12,9 +12,8 @@ class AnimalCard {
         this.animalName =           animalName;
         this.animalColor =          animalColor;
         this.animalCatchphrase =    animalCatchphrase;
-
         // we need these 2 values for the picture and for the color
-        this.randomPicture =        Math.floor(Math.random()*7);
+        this.randomPicture =        Math.floor(Math.random()*6);
         this.randomColor =          Math.floor(Math.random()*3);
     }
 
@@ -27,10 +26,10 @@ class AnimalCard {
         return `
         <li class="card cardAnimation">
                     <div class="card-top-container">
-                        <div class="card-top">
+                        <div class="card-top ${this.textRandomPicture} ${this.textRandomColor}">
                         </div>
                     </div>
-                    <div class="card-bottom-container">
+                    <div class="card-bottom-container ${this.textRandomColor}">
                         <div class="card-bottom">
                             <div class="card-bottom-content">
                                 <h4 class="card-text card-title">Hello!</h4><p class="card-text">My name is <span class="em card-name">${this.animalName}</span> and my favorite color is <span class="em card-color">${this.animalColor}</span>!<p class="em card-text card-catchphrase-p"><span class="card-catchphrase">"${this.animalCatchphrase}"</p></p>
@@ -53,6 +52,8 @@ class AnimalCard {
         return getRandomColor(this.randomColor);
     }
 
+/*     return deleteAnimation(); */
+
 /*     get whereAmI() {
         return this;
     } */
@@ -64,13 +65,14 @@ class AnimalCard {
 const formName = document.querySelector(".name");
 const formColor = document.querySelector(".color");
 const formCatchphrase = document.querySelector(".catchphrase");
-
 const formSubmit = document.querySelector(".btn");
-
 const listOfCards = document.querySelector(".cards");
 
 // this is an array of the 3 random colors assigned to each card
-const arrayOfColors = ["var(--lightsky)", "var(--turqoise)", "var(--yellow)"]
+const arrayOfColors = ["lightsky", "turquise", "yellow"]
+
+// this is an array of the 6 random animal pictures assigned to each card
+const arrayOfAnimals = ["animal-1", "animal-2", "animal-3", "animal-4", "animal-5", "animal-6"]
 
 /* -------------------------------- functions ------------------------------- */
 
@@ -81,11 +83,15 @@ function clearInputFields(){
 }
 
 function getRandomPicture(randomPictureIndex) {
-    return `/img/${randomPictureIndex}.PNG`;
+    return arrayOfAnimals[randomPictureIndex];
 }
 
 function getRandomColor(randomColorIndex) {
-    return arrayOfColors[randomColorIndex]
+    return arrayOfColors[randomColorIndex];
+}
+
+function deleteAnimation(){
+    console.log(this.element);
 }
 
 /* ----------------------------- event listeners ---------------------------- */

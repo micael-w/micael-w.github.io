@@ -76,6 +76,48 @@
 /*                                 actual css                                 */
 /* -------------------------------------------------------------------------- */
 
+/* ------------------------ classes for random colors ----------------------- */
+
+.lightsky {
+    background-color: var(--lightsky);
+}
+
+.turquise {
+    background-color: var(--turquise);
+}
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+/* ------------------- classes for random animal pictures ------------------- */
+
+.animal-1 {
+    background-image: url(./img/1.PNG);
+}
+
+.animal-2 {
+    background-image: url(./img/2.PNG);
+}
+
+.animal-3 {
+    background-image: url(./img/3.PNG);
+}
+
+.animal-4 {
+    background-image: url(./img/4.PNG);
+}
+
+.animal-5 {
+    background-image: url(./img/5.PNG);
+}
+
+.animal-6 {
+    background-image: url(./img/6.PNG);
+}
+
+/* ------------------------------- static css ------------------------------- */
+
 body {
     background-color: var(--cream);
 /*     background-image: url(./img/bg.JPG);
@@ -224,10 +266,10 @@ h1 {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     height: 100%;
-    background-image: url(./img/1.PNG);
+/*     background-image: url(./img/1.PNG); */
     background-size: contain;
     background-position-x: center;
-    background-color: var(--lightsky);
+/*     background-color: var(--lightsky); */
     border-bottom-left-radius: 30%;
 }
 
@@ -237,7 +279,7 @@ h1 {
     height: 60%;
     display: flex;
     flex-direction: column;
-    background-color: var(--lightsky);
+/*     background-color: var(--lightsky); */
     
 }
 
@@ -247,6 +289,7 @@ h1 {
     height: 100%;
     background-color: var(--white);
     border-top-right-radius: 30%;
+    overflow-wrap: break-word;
     overflow: hidden;
 }
 
