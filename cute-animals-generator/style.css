@@ -90,6 +90,10 @@
     background-color: var(--yellow);
 }
 
+.orange {
+    background-color: var(--orange);
+}
+
 /* ------------------- classes for random animal pictures ------------------- */
 
 .animal-1 {

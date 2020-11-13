@@ -14,7 +14,7 @@ class AnimalCard {
         this.animalCatchphrase =    animalCatchphrase;
         // we need these 2 values for the picture and for the color
         this.randomPicture =        Math.floor(Math.random()*6);
-        this.randomColor =          Math.floor(Math.random()*3);
+        this.randomColor =          Math.floor(Math.random()*4);
     }
 
     get text() {
@@ -60,8 +60,8 @@ const formCatchphrase = document.querySelector(".catchphrase");
 const formSubmit = document.querySelector(".btn");
 const listOfCards = document.querySelector(".cards");
 
-// this is an array of the 3 random colors assigned to each card
-const arrayOfColors = ["lightsky", "turquise", "yellow"]
+// this is an array of the 4 random colors assigned to each card
+const arrayOfColors = ["lightsky", "turquise", "yellow", "orange"]
 
 // this is an array of the 6 random animal pictures assigned to each card
 const arrayOfAnimals = ["animal-1", "animal-2", "animal-3", "animal-4", "animal-5", "animal-6"]
