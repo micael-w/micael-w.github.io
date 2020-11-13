@@ -133,6 +133,10 @@ h1 {
     display: inline;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .form-title {
     font-family: var(--fontsans);
     font-weight: 700;
@@ -235,10 +239,10 @@ h1 {
     padding: .4rem;
     display: flex;
     max-width: 100%;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-around;
 /*     align-items: flex-start; */
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 /*     background: black; */
 }
 

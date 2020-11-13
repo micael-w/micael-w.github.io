@@ -41,22 +41,14 @@ class AnimalCard {
     }
 
     // set the random image
-
     get textRandomPicture() {
         return getRandomPicture(this.randomPicture);
     }
 
     // set the random color
-
     get textRandomColor() {
         return getRandomColor(this.randomColor);
     }
-
-/*     return deleteAnimation(); */
-
-/*     get whereAmI() {
-        return this;
-    } */
 }
 
 
@@ -76,7 +68,7 @@ const arrayOfAnimals = ["animal-1", "animal-2", "animal-3", "animal-4", "animal-
 
 /* -------------------------------- functions ------------------------------- */
 
-function clearInputFields(){
+function clearInputFields() {
     formName.value = "";
     formColor.value = "";
     formCatchphrase.value = "";
@@ -90,20 +82,17 @@ function getRandomColor(randomColorIndex) {
     return arrayOfColors[randomColorIndex];
 }
 
-function deleteAnimation(){
-    console.log(this.element);
-}
-
 /* ----------------------------- event listeners ---------------------------- */
 
 formSubmit.addEventListener("click", function(event) {
     const addAnimal = new AnimalCard(formName.value, formColor.value, formCatchphrase.value);
-/*     console.log(addAnimal.text); */
     console.log(addAnimal.textRandomPicture);
     console.log(addAnimal.textRandomColor);
-/*     console.log(addAnimal.whereAmI); */
 
-    listOfCards.innerHTML += addAnimal.listItem;
+    let li = document.createElement("li");
+    li.innerHTML = addAnimal.listItem;
+    listOfCards.appendChild(li);
+    console.log(li)
 
     clearInputFields();
 });
