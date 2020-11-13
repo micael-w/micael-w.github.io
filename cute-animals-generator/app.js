@@ -7,19 +7,22 @@
 // declare a class for the cards with all the animals
 
 class AnimalCard {
+
     constructor(animalName, animalColor, animalCatchphrase) {
-        this.animalName = animalName;
-        this.animalColor = animalColor;
-        this.animalCatchphrase = animalCatchphrase;
+        this.animalName =           animalName;
+        this.animalColor =          animalColor;
+        this.animalCatchphrase =    animalCatchphrase;
+
         // we need these 2 values for the picture and for the color
-        this.randomPicture = Math.floor(Math.random()*7);
-        this.randomColor = Math.floor(Math.random()*3);
+        this.randomPicture =        Math.floor(Math.random()*7);
+        this.randomColor =          Math.floor(Math.random()*3);
     }
 
     get text() {
-        return `Hello! My name is ${this.animalName}, my favorite color is ${this.animalColor} and my catchprhase is ${this.animalCatchphrase}! The random picture is ${this.randomPicture} and the random color is ${this.randomColor} `;
+        return `Hello! My name is ${this.animalName}, my favorite color is ${this.animalColor} and my catchphrase is ${this.animalCatchphrase}! The random picture is ${this.randomPicture} and the random color is ${this.randomColor} `;
     }
 
+    // return our html for the card
     get listItem() {
         return `
         <li class="card cardAnimation">
@@ -37,6 +40,22 @@ class AnimalCard {
                 </li>
         `
     }
+
+    // set the random image
+
+    get textRandomPicture() {
+        return getRandomPicture(this.randomPicture);
+    }
+
+    // set the random color
+
+    get textRandomColor() {
+        return getRandomColor(this.randomColor);
+    }
+
+/*     get whereAmI() {
+        return this;
+    } */
 }
 
 
@@ -50,6 +69,9 @@ const formSubmit = document.querySelector(".btn");
 
 const listOfCards = document.querySelector(".cards");
 
+// this is an array of the 3 random colors assigned to each card
+const arrayOfColors = ["var(--lightsky)", "var(--turqoise)", "var(--yellow)"]
+
 /* -------------------------------- functions ------------------------------- */
 
 function clearInputFields(){
@@ -58,14 +80,24 @@ function clearInputFields(){
     formCatchphrase.value = "";
 }
 
+function getRandomPicture(randomPictureIndex) {
+    return `/img/${randomPictureIndex}.PNG`;
+}
+
+function getRandomColor(randomColorIndex) {
+    return arrayOfColors[randomColorIndex]
+}
+
+/* ----------------------------- event listeners ---------------------------- */
+
 formSubmit.addEventListener("click", function(event) {
     const addAnimal = new AnimalCard(formName.value, formColor.value, formCatchphrase.value);
-    console.log(addAnimal.text)
+/*     console.log(addAnimal.text); */
+    console.log(addAnimal.textRandomPicture);
+    console.log(addAnimal.textRandomColor);
+/*     console.log(addAnimal.whereAmI); */
 
     listOfCards.innerHTML += addAnimal.listItem;
 
-
-
     clearInputFields();
 });
-
