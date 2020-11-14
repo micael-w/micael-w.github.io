@@ -24,7 +24,7 @@ class AnimalCard {
     // return our html for the card
     get listItem() {
         return `
-        <li class="card cardAnimation">
+
                     <div class="card-top-container">
                         <div class="card-top ${this.textRandomPicture} ${this.textRandomColor}">
                         </div>
@@ -36,7 +36,7 @@ class AnimalCard {
                             </div>
                         </div>
                     </div>
-                </li>
+
         `
     }
 
@@ -91,8 +91,9 @@ formSubmit.addEventListener("click", function(event) {
 
     let li = document.createElement("li");
     li.innerHTML = addAnimal.listItem;
+    li.classList.add("card", "cardAnimation");
     listOfCards.appendChild(li);
-    console.log(li)
+/*     console.log(li) */
 
     clearInputFields();
 });
