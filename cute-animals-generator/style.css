@@ -127,7 +127,6 @@
 .progress-bar-bg {
     display: none;
     margin-top: 1rem;
-/*     background-color: var(--midnight); */
     border: 1px solid var(--midnight);
     border-radius: 1rem;
 }
@@ -141,8 +140,6 @@
 
 body {
     background-color: var(--cream);
-/*     background-image: url(./img/bg.JPG);
-    background-repeat: repeat-x; */
     display: flex;
     justify-content: center;
     color: var(--midnight);
@@ -154,6 +151,24 @@ h1 {
     display: inline;
     font-weight: 700;
     letter-spacing: -.1rem;
+}
+
+.checked {
+    background-image: url(./img/check-circle-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position-y: center;
+    background-position-x: right;
+    background-origin: content-box;
+}
+
+.unchecked {
+    background-image: url(./img/times-circle-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position-y: center;
+    background-position-x: right;
+    background-origin: content-box;
 }
 
 .form-title {
@@ -188,12 +203,10 @@ h1 {
     justify-content: center;
     min-width: 45vw;
     max-width: 45vw;
-/*     background: yellow; */
 }
 
 .container {
     width: 100%;
-/*     background: teal; */
 }
 
 .form-input {
@@ -252,7 +265,6 @@ h1 {
     cursor: not-allowed;
 }
 
-/* maybe set to grid */
 .cards {
     margin-top: 1rem;
     padding: .4rem;
@@ -260,9 +272,7 @@ h1 {
     max-width: 100%;
     flex-direction: row-reverse;
     justify-content: space-evenly;
-/*     align-items: flex-start; */
     flex-wrap: wrap-reverse;
-/*     background: black; */
 }
 
 .card {
