@@ -10,7 +10,7 @@ Here are the projects it contains in reverse chronological order:
 
 ## Cute Animals Generator
 
-[Cute Animals Generator](http://micael-w.github.io/cute-animals-generator/) is a version of a website that makes cards as you add them. This project uses custom made illustrations that, along with a color, is randomly assigned to each card. The images are also preloaded, since they're not immediately visible/loaded.
+[Cute Animals Generator](http://micael-w.github.io/cute-animals-generator/) is a version of a website that makes cards as you add them. This project uses custom made illustrations that, along with a color, is randomly assigned to each card. The images are also preloaded, since they're not immediately visible, thus not immediately loaded.
 
 ## Objects
 
