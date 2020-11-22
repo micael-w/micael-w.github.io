@@ -28,7 +28,6 @@ class TipCalculator {
 
 /* ----------------------------- calculate stuff ---------------------------- */
 
-
     static getValues(b, p, t){
         const bpt = [];
         bpt.push(`Total bill is: $${((b*t).toFixed(2))}`);
