@@ -1,37 +1,50 @@
+/* ------------------------------- make class ------------------------------- */
+
+class TipCalculator {
+
+/* ------------------------------- init stuff ------------------------------- */
+
+    static init() {
+        document.querySelector(".submit").addEventListener("click", (event) => TipCalculator.eventListener(event));
+    }
+
+/* -------------------------------- do stuff -------------------------------- */
+
+    static eventListener(event) {
+        event.preventDefault();
+        const billAmount = this.getInputValues(".bill-amount");
+        const peopleAmount = this.getInputValues(".people-amount");
+        const tipMultiplier = this.getInputValues(".tip-multiplier");
+        document.querySelector(".results").innerHTML = "";
+        TipCalculator.render(billAmount, peopleAmount, tipMultiplier);
+        document.querySelectorAll(".user-input").forEach((element) => (element.value = ""));
+    }
+
 /* -------------------------------- get stuff ------------------------------- */
 
-document.querySelector(".submit").addEventListener("click", (event) => {
-    event.preventDefault();
-    const billAmount = document.querySelector(".bill-amount").value;
-    const peopleAmount = document.querySelector(".people-amount").value;
-    const tipMultiplier = document.querySelector(".tip-multiplier").value;
-    document.querySelector(".results").innerHTML = "";
-    Render.makeParagraphs(billAmount, peopleAmount, tipMultiplier);
-    (document.querySelectorAll(".user-input")).forEach(element => {
-        element.value = "";
-    });
-});
-
-/* ------------------------------ render stuff ------------------------------ */
-
-class Render {
-    static makeParagraphs(b, p, t){
-        const bpt = Calculate.getValues(b, p, t);
-        for (let i = 0; i < (bpt.length); i++) {
-            const results = document.querySelector(".results");
-            results.innerHTML += `<p>${bpt[i]}</p>`;
-        }
+    static getInputValues(selector) {
+        return document.querySelector(selector).value;
     }
-}
 
 /* ----------------------------- calculate stuff ---------------------------- */
 
-class Calculate {
+
     static getValues(b, p, t){
         const bpt = [];
-            bpt.push(`Total bill is: $${((b*t).toFixed(2))}`);
-            bpt.push(`Amount per person is: $${(((b*t)/p).toFixed(2))}`);
-            bpt.push(`Tip amount is: $${(((b*t)-b).toFixed(2))}`);
-            return bpt;
+        bpt.push(`Total bill is: $${((b*t).toFixed(2))}`);
+        bpt.push(`Amount per person is: $${(((b*t)/p).toFixed(2))}`);
+        bpt.push(`Tip amount is: $${(((b*t)-b).toFixed(2))}`);
+        return bpt;
+    }
+
+/* ------------------------------ render stuff ------------------------------ */
+
+    static render(b, p, t){
+        const bpt = this.getValues(b, p, t);
+        bpt.forEach((i) => {
+            document.querySelector(".results").innerHTML += `<p>${i}</p>`;
+        });
     }
 }
+
+TipCalculator.init();
