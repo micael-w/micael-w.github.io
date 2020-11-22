@@ -47,4 +47,6 @@ class TipCalculator {
     }
 }
 
+/* -------------------------------- let's go! ------------------------------- */
+
 TipCalculator.init();
