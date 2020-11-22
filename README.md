@@ -1,5 +1,3 @@
-# micael-w.github.io
-
 # Hello and welcome to my Github Pages repository
 
 Here are the projects it contains in reverse chronological order:
