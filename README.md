@@ -4,7 +4,7 @@ Here are the projects it contains in reverse chronological order:
 
 ## Tip Calculator
 
-[Tip Calculator](http://micael-w.github.io/tip-calculator/) is a calculator for calculating tips. It was made with classes as part of an introduction to OOP. I tried to make it as minimal and DRY as possible. The array bpt and the variables b, p and t are only named like that because it makes sense that the variables b, p and t gets pushed into the array bpt and I don't want line breaks everywhere.
+[Tip Calculator](http://micael-w.github.io/tip-calculator/) is a calculator for calculating tips. It was made with classes as part of an introduction to OOP. I tried to make it as minimal and DRY as possible. The array bpt and the variables b, p and t are only named like that because it makes sense that the variables b, p and t gets pushed into the array bpt and I don't want one million line breaks everywhere from calculations with long variable names.
 
 ## Cute Animals Generator
 
@@ -12,7 +12,7 @@ Here are the projects it contains in reverse chronological order:
 
 ## Objects
 
-[Objects](https://micael-w.github.io/objects/) is a group assignment where I was delegated to make the objects part of the website.
+[Objects](https://micael-w.github.io/objects/) is a group assignment wherein making the objects part of the website was delegated to me.
 
 ## Insurance Grid
 
