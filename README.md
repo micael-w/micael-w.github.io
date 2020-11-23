@@ -2,6 +2,10 @@
 
 Here are the projects it contains in reverse chronological order:
 
+## Chuck Norris Ajax
+
+[Chuck Norris Ajax](http://micael-w.github.io/chuck-norris-ajax/) is an app where you can push a button and it gets a "joke" from an API using AJAX.
+
 ## Tip Calculator
 
 [Tip Calculator](http://micael-w.github.io/tip-calculator/) is a calculator for calculating tips. It was made with classes as part of an introduction to OOP. I tried to make it as minimal and DRY as possible. The array bpt and the variables b, p and t are only named like that because it makes sense that the variables b, p and t gets pushed into the array bpt and I don't want one million line breaks everywhere from calculations with long variable names.
