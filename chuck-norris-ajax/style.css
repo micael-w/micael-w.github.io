@@ -1,0 +1,171 @@
+/* -------------------------------------------------------------------------- */
+/*                                 initialize                                 */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ import fonts ------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+:root {
+
+/* ---------------------------- set up variables ---------------------------- */
+
+/* ---------------------------------- fonts --------------------------------- */
+
+    --fontsans: 'Roboto Condensed', sans-serif;
+
+/* --------------------------------- colors --------------------------------- */
+
+    --white:    #fefeff;
+    --cream:    #fff8f3;
+    --peach:    #f8e7e1;
+    --coral:    #f4d4c9;
+
+    --lightsky: #c5e6f6;
+    --turquise: #31b4ba;
+    --deepsky:  #51a3d1;
+    --midnight: #1f426a;
+
+    --yellow:   #fab14f;
+    --orange:   #e8604d;
+    --red:      #e33e4b;
+
+}
+
+/* -------------------------------- css reset ------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cardAnimation {
+    -webkit-animation-name: cardAnimation;
+    animation-name: cardAnimation;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+}
+
+@keyframes cardAnimation {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+
+    20% {
+        -webkit-transform: scale(1.22, 1.22);
+        transform: scale(1.22, 1.22);
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+body {
+    font-family: var(--fontsans);
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    color: var(--midnight);
+}
+
+h1 {
+
+    font-size: 3.5rem;
+    display: inline;
+    font-weight: 700;
+    letter-spacing: -.1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.text-gradient-1 {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, var(--red), var(--yellow));
+    background-color: var(--midnight);
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+.wrapper {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    min-width: 45vw;
+    max-width: 45vw;
+}
+
+.container {
+    width: 100%;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-family: var(--fontsans);
+    color: white;
+    background-color: var(--midnight);
+    font-size: 1.4rem;;
+    border: none;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: .8rem;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    padding: .4rem;
+    transition: transform 250ms ease-in-out;
+    opacity: 90%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.btn:hover {
+    opacity: 100%;
+}
+
+.btn:active {
+    outline: none;
+    transform: scale(.98);
+    opacity: 100%;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.cards {
+    margin-top: 1rem;
+    padding: .4rem;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+}
+
+.card {
+    margin-top: 1rem;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-shadow: 1px 1px 10px var(--coral);
+}
+
+.cn-quote {
+    padding: 1rem;
+}
