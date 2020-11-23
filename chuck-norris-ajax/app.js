@@ -3,11 +3,10 @@ document.querySelector(".btn").addEventListener("click", (event) => giveMeAJoke(
 function giveMeAJoke() {
     const request = new XMLHttpRequest
     request.open("GET", "https://api.chucknorris.io/jokes/random", true);
-    request.onload = function(){
-        if(this.status === 200){
+    request.onload = function() {
+        if(this.status === 200) {
             let data =  this.responseText;
             joke = JSON.parse(data);
-            console.log(joke.value);
             let li = document.createElement("li");
             li.innerHTML = `
             <li class="card cardAnimation">
