@@ -2,6 +2,11 @@
 
 Here are the projects it contains in reverse chronological order:
 
+
+## Corona Tracker
+
+[Corona Tracker](https://micael-w.github.io/corona-tracker/) is an app that gets corona related info from an API and displays it in various ways.
+
 ## Chuck Norris Ajax
 
 [Chuck Norris Ajax](http://micael-w.github.io/chuck-norris-ajax/) is an app where you can push a button and it gets a "joke" from an API using AJAX.
