@@ -1,0 +1,383 @@
+/* ------------------------------ import fonts ------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+
+/* ---------------------------------- fonts --------------------------------- */
+
+    --fontsans: 'Arimo', sans-serif;
+ 
+/* --------------------------------- colors --------------------------------- */
+ 
+/* ------------------------------- background       */
+
+    --bg-dark:              #c6dee5;
+    --bg-mid:               #e0ebee;
+    --bg-light:             #e5f6f3;
+
+/* --------------------------------- primary        */
+    
+    --interface-dark:       #e8f1f0;
+    --interface-dark-50:    rgba(232, 241, 240, .5);
+    --interface-light:      #f4f8f4;
+    --white:                #fcfcf6;
+    --dark:                 #454d63;
+    --blue:                 #4591dc;
+    --subtle-warm:          #f3f2ee;
+    --subtle-cold:          #b4c0d9;
+
+/* ---------------------------------- reds          */
+
+    --red-dark:             #d24e63;
+    --red-mid:              #e86c7e;
+    --red-light:            #e98893;
+
+/* --------------------------------- yellows        */
+
+    --yellow-dark:          #fd9a4d;
+    --yellow-mid:           #ffb94d;
+    --yellow-light:         #ffca4c;
+
+/* --------------------------------- greens         */
+
+    --green-dark:           #478965;
+    --green-mid:            #57a682;
+    --green-light:          #73bf7c;
+
+/* --------------------------------- purples        */
+ 
+    --purple-dark:          #d17bcf;
+    --purple-mid:           #d096e1;
+    --purple-light:         #c8b2f9;
+
+}
+
+/* ---------------------------- framework classes --------------------------- */
+
+.br-20 {
+    border-radius: 20px;
+}
+
+.m-lr-1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.m-tb-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.m-t-1 {
+    margin-top: 1rem;
+}
+
+.m-b-1 {
+    margin-bottom: 1rem;
+}
+
+.transition-all {
+    transition: all .5s ease-in;
+}
+
+.bs-sm-02 {
+    box-shadow: 0 4px 6px 0 var(--interface-dark);
+}
+
+.tooltip-em, .sub-text-em {
+    font-weight: 700;
+}
+
+.sc {
+    text-transform: uppercase;
+    font-size: .6rem;
+    border-bottom: solid 1px var(--dark);
+    margin-bottom: .4rem;
+}
+
+/* -------------------------------- css reset ------------------------------- */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------- actual css ------------------------------- */
+
+body{
+    font-family: var(--fontsans);
+    color: var(--dark);
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, var(--bg-light), var(--bg-dark));
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 3rem;
+    width: 80%;
+    height: 70%;
+/*     background-color: var(--red-dark); */
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--bg-dark);
+    background-color: var(--interface-dark-50);
+    padding: .8rem;
+    border-radius: 20px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--interface-dark-50);
+}
+
+.dashboard-left {
+/*     background-color: var(--red-mid); */
+    flex-basis: 0%;
+}
+
+.dashboard-main {
+    background-color: var(--interface-light);
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-main-title {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 5%;
+}
+
+.dashboard-h2 {
+    font-size: 1rem;
+    color: var(--blue);
+    margin-left: 1rem;
+}
+
+.dashboard-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    height: 60%;
+}
+
+.spinner {
+    display: block;
+    padding-top: 5rem;
+}
+
+.dashboard-main-content-header {
+    width: 95%;
+    color: var(--dark);
+}
+
+/* ---------------------------------- graph --------------------------------- */
+
+.dashboard-main-content-graph-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+    width: 95%;
+}
+
+.dashboard-main-content-graph-container-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90%;
+    width: 100%;
+/*     background-color: var(--red-dark); */
+}
+
+.graph-column-bg {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    flex-grow: 1;
+/*     background-color: var(--interface-light); */
+}
+
+.graph {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.graph-column {
+    width: 100%;
+    background-color: var(--yellow-light);
+}
+
+/* --------------------------------- tooltip -------------------------------- */
+
+.graph:hover {
+    background-color: var(--bg-light);
+}
+
+.graph:hover .graph-column {
+    background-color: var(--yellow-dark);
+}
+
+.graph:hover .tooltip-container {
+    display: grid;
+}
+
+.tooltip-container {
+    display: none;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    cursor: default;
+    border: 2px solid var(--red-dark);
+    width: 16rem;
+    height: 4rem;
+    padding: 0.5rem;
+    background-color: var(--interface-dark-50);
+    border-radius: 8px;
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+}
+
+.graph-tooltip {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.dashboard-main-content-graph-container-bottom {
+    height: 10%;
+    width: 100%;
+/*     background-color: var(--green-light); */
+}
+
+/* ------------------------------ sub-container ----------------------------- */
+
+.dashboard-main-content-sub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    width: 95%;
+/*     background-color: var(--dark); */
+}
+
+.dashboard-sub-container {
+    height: 90%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "one three"
+      "two four";
+}
+
+.container-sub {
+    display: flex;
+    align-items: center;
+}
+
+.sub-text {
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.sub-text-one {
+    border-left: solid 3px var(--green-light);
+}
+
+.sub-text-two {
+    border-left: solid 3px var(--purple-light);
+}
+
+.sub-text-three {
+    border-right: solid 3px var(--red-light)
+}
+
+.sub-text-four {
+    border-right: solid 3px var(--yellow-light)
+}
+
+.sub-text-left {
+    margin-left: 1rem;
+    padding-left: .5rem;
+}
+
+.sub-text-right {
+    margin-right: 1rem;
+    padding-right: .5rem;
+}
+
+.container-sub-one {
+    grid-area: one;
+/*     background-color: var(--red-dark); */
+}
+
+.container-sub-two {
+    grid-area: two;
+/*     background-color: var(--yellow-dark); */
+}
+
+.container-sub-three {
+    grid-area: three;
+/*     background-color: var(--green-dark); */
+    justify-self: flex-end;
+}
+
+.container-sub-four {
+    grid-area: four;
+/*     background-color: var(--purple-dark); */
+    justify-self: flex-end;
+}
+
+/* --------------------------------- footer --------------------------------- */
+
+.dashboard-main-footer {
+    background-color: var(--white);
+    height: 30%;
+}
+
+.dashboard-right {
+/*     background-color: var(--green-light); */
+    flex-basis: 20%;
+}
+
+.div-test {
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--red-light);
+}
+
+.div-test-bar {
+    flex-grow: 1;
+    background-color: var(--green-light);
+    margin-left: 0.1rem;
+}
