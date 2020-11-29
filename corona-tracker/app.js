@@ -75,19 +75,12 @@ function printDailySummary() {
     parsedData.features.map(elem => {
         listOfIDs.push(elem.id);
     });
-    console.log(listOfIDs);
 
     let dailyCases = parsedData.features[0].properties.Totalt_antal_fall;
-    console.log(new Intl.NumberFormat().format(dailyCases));
     let dailyIntensiveCare = parsedData.features[0].properties.Antal_intensivvardade;
-    console.log(dailyIntensiveCare);
     let dailyDeceased = parsedData.features[0].properties.Antal_avlidna;
-    console.log(dailyDeceased);
     let totalCases = parsedData.features[0].properties.Kumulativa_fall;
-    console.log(new Intl.NumberFormat().format(totalCases));
-
     let titleDate = (new Date(parsedData.features[0].properties.Statistikdatum).toLocaleDateString("sv-SE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-    console.log(titleDate);
 
     document.querySelector(".dashboard-sub-container").innerHTML = `
         <div class="container-sub container-sub-one">
@@ -111,11 +104,5 @@ function printDailySummary() {
     document.querySelector(".dashboard-main-content-header").innerHTML = `
         <h5 class="dashboard-h5 m-t-1">Rapporterade nya fall per dag, till och med ${titleDate}</h5>
     `
-
-/*     let latestReport = listOfIDs.reduce((a, b) => Math.max(a, b));
-    console.log(parsedData);
-    console.log(latestReport); */
-
-
 
 }
