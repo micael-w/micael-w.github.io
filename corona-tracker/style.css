@@ -394,6 +394,10 @@ body{
         height: 50%;
         width: 95%;
     }
+
+    .tooltip-container {
+        left: 5%;
+    }
 }
 
 @media screen and (max-width: 940px) {
