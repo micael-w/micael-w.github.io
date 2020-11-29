@@ -379,6 +379,21 @@ body{
         font-size: .8rem;
         letter-spacing: 0px;
     }
+    .dashboard-main-content-graph-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 95%;
+    }
+
+    .dashboard-main-content-sub-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 940px) {
@@ -399,7 +414,7 @@ body{
         height: 100%;
     }
 
-    .dashboard-main-content-graph-container {
+/*     .dashboard-main-content-graph-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -413,7 +428,7 @@ body{
         align-items: center;
         height: 50%;
         width: 95%;
-    }
+    } */
 
 
     .container {
