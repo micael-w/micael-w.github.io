@@ -1,0 +1,65 @@
+{
+   "response_code":0,
+   "results":[
+      {
+         "category":"Science: Mathematics",
+         "type":"multiple",
+         "difficulty":"easy",
+         "question":"(1) In Roman Numerals, what does XL equate to?",
+         "correct_answer":"40",
+         "incorrect_answers":[
+            "60",
+            "15",
+            "90"
+         ]
+      },
+      {
+         "category":"Entertainment: Video Games",
+         "type":"multiple",
+         "difficulty":"medium",
+         "question":"(2) Which survivor in Left 4 Dead sacrificed themself to save the other survivors?",
+         "correct_answer":"Bill",
+         "incorrect_answers":[
+            "Louis",
+            "Francis",
+            "Zoey"
+         ]
+      },
+      {
+         "category":"General Knowledge",
+         "type":"multiple",
+         "difficulty":"easy",
+         "question":"(3) What is Cynophobia the fear of?",
+         "correct_answer":"Dogs",
+         "incorrect_answers":[
+            "Birds",
+            "Flying",
+            "Germs"
+         ]
+      },
+      {
+         "category":"History",
+         "type":"multiple",
+         "difficulty":"easy",
+         "question":"(4) Who rode on horseback to warn the Minutemen that the British were coming during the U.S. Revolutionary War?",
+         "correct_answer":"Paul Revere",
+         "incorrect_answers":[
+            "Thomas Paine",
+            "Henry Longfellow",
+            "Nathan Hale"
+         ]
+      },
+      {
+         "category":"Geography",
+         "type":"multiple",
+         "difficulty":"medium",
+         "question":"(5) Which two modern-day countries used to be known as the region of Rhodesia between the 1890s and 1980?",
+         "correct_answer":"Zambia &amp; Zimbabwe",
+         "incorrect_answers":[
+            "Togo &amp; Benin",
+            "Lesotho &amp; Swaziland",
+            "Rwanda &amp; Burundi"
+         ]
+      }
+   ]
+}

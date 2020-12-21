@@ -1,0 +1,331 @@
+/* ------------------------------- import font ------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+ 
+/* --------------------------------- colors --------------------------------- */
+ 
+    --white:        #f8f9fb;
+    --white-dark:   #f2f3f5;
+    --black:        #1f2850;
+    --black-light:  #a2a6b5;
+
+    --green:        #8cd181;
+    --green-25:     rgba(140, 209, 129, 0.25);
+    --green-dark:   #1e8d3e;
+    --red:          #f56d84;
+    --red-dark:     #cb4f6f;
+    --yellow:       #f5c521;
+    --yellow-dark:  #f4a603;
+    --blue:         #0e80e3;
+    --blue-50:      rgba(14, 128, 227, 0.5);
+    --blue-dark:    #3b4a9b;
+ 
+}
+
+/* -------------------------------- css reset ------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------- css ---------------------------------- */
+
+body {
+    background-color: var(--white-dark);
+    color: var(--black-light);
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+    color: var(--black);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.wrapper {
+    background-color: var(--white);
+    margin-top: 3rem;
+    width: 60vw;
+    min-height: 60vh;
+    border-radius: 2%;
+    box-shadow:
+    0 4.5px 3.6px rgba(31, 40, 80, 0.024),
+    0 12.5px 10px rgba(31, 40, 80, 0.035),
+    0 30.1px 24.1px rgba(31, 40, 80, 0.046),
+    0 100px 80px rgba(031, 40, 80, 0.07);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 0px 0px;
+    grid-template-areas:
+      "question question question question"
+      "question-number question-number question-number question-number"
+      "progress-bar progress-bar progress-bar progress-bar"
+      "option-1 option-1 option-2 option-2"
+      "option-3 option-3 option-4 option-4"
+      "navigation navigation navigation navigation";
+}
+
+.question { 
+    grid-area: question;
+    text-align: center;
+}
+
+.question-number {
+    grid-area: question-number;
+    text-align: center;
+    opacity: .7;
+    margin-top: .3rem;
+}
+
+.progress, .progress-bar {
+    height: 1rem;
+    border-radius: 5px;
+}
+
+.progress {
+    justify-self: center;
+    grid-area: progress-bar;
+    background-color: var(--blue-50);
+    width: 95%;
+
+}
+
+.progress-bar {
+    background-color: var(--blue-dark);
+    opacity: .5;
+/*     width: 20%; */
+    transition: all 150ms ease-in-out;
+}
+
+.option {
+    background-color: var(--white-dark);
+    text-align: center;
+}
+
+.option:hover {
+    background-color: var(--black-light);
+    color: var(--white);
+}
+
+.option-selected {
+    border: solid 1px var(--black-light);
+}
+
+.option-1 {
+    grid-area: option-1;
+}
+
+.option-2 {
+    grid-area: option-2;
+}
+
+.option-3 {
+    grid-area: option-3;
+}
+
+.option-4 {
+    grid-area: option-4;
+}
+
+.navigation {
+    justify-self: center;
+    width: 100%;
+    grid-area: navigation;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 150ms ease-in-out;
+    opacity: 90%;
+    margin: 1rem;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.btn:active {
+    outline: none;
+    transform: scale(.98);
+    opacity: 100%;
+}
+
+.hide-me {
+    display: none;
+}
+
+.nav-btn {
+    width: 45%;
+    padding: .5rem;
+}
+
+.nav-btn-full {
+    background-color: var(--white-dark);
+    width: 90%;
+    padding: .5rem;
+}
+
+.next {
+    color: var(--black);
+    background-color: var(--green);
+}
+
+.next:hover {
+    background-color: var(--green-dark);
+    color: var(--white);
+}
+
+.restart {
+    color: var(--black-light);
+}
+
+.restart:hover {
+    border: none;
+    background-color: var(--black-light);
+    color: var(--white);
+}
+
+.nav-btn, .option {
+    cursor: pointer;
+}
+
+.next-disabled, .next-disabled:hover, .next-disabled:active {
+    color: var(--black);
+    background-color: var(--green);
+    opacity: 50%;
+    cursor: default;
+    transform: scale(1);
+}
+
+.results {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr repeat(10, 1fr) 2fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "score score score score"
+      "qu-1 qu-1 qu-1 qu-1"
+      "qu-1-op-1 qu-1-op-2 qu-1-op-3 qu-1-op-4"
+      "qu-2 qu-2 qu-2 qu-2"
+      "qu-2-op-1 qu-2-op-2 qu-2-op-3 qu-2-op-4"
+      "qu-3 qu-3 qu-3 qu-3"
+      "qu-3-op-1 qu-3-op-2 qu-3-op-3 qu-3-op-4"
+      "qu-4 qu-4 qu-4 qu-4"
+      "qu-4-op-1 qu-4-op-2 qu-4-op-3 qu-4-op-4"
+      "qu-5 qu-5 qu-5 qu-5"
+      "qu-5-op-1 qu-5-op-2 qu-5-op-3 qu-5-op-4"
+      "navigation navigation navigation navigation";
+}
+  
+.score {
+    grid-area: score;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.qu {
+    width: 90%;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.op {
+    text-align: center;
+    margin: .5rem 2rem;
+    font-size: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.op-correct {
+    background-color: var(--green-25);
+    color: var(--green-dark);
+    font-weight: 500;
+}
+
+.op-selected {
+    border: solid 1px var(--blue-50);
+}
+
+.qu-1 { grid-area: qu-1; }
+
+.qu-1-op-1 { grid-area: qu-1-op-1; }
+
+.qu-1-op-2 { grid-area: qu-1-op-2; }
+
+.qu-1-op-3 { grid-area: qu-1-op-3; }
+
+.qu-1-op-4 { grid-area: qu-1-op-4; }
+
+.qu-2 { grid-area: qu-2; }
+
+.qu-2-op-1 { grid-area: qu-2-op-1; }
+
+.qu-2-op-2 { grid-area: qu-2-op-2; }
+
+.qu-2-op-3 { grid-area: qu-2-op-3; }
+
+.qu-2-op-4 { grid-area: qu-2-op-4; }
+
+.qu-3 { grid-area: qu-3; }
+
+.qu-3-op-1 { grid-area: qu-3-op-1; }
+
+.qu-3-op-2 { grid-area: qu-3-op-2; }
+
+.qu-3-op-3 { grid-area: qu-3-op-3; }
+
+.qu-3-op-4 { grid-area: qu-3-op-4; }
+
+.qu-4 { grid-area: qu-4; }
+
+.qu-4-op-1 { grid-area: qu-4-op-1; }
+
+.qu-4-op-2 { grid-area: qu-4-op-2; }
+
+.qu-4-op-3 { grid-area: qu-4-op-3; }
+
+.qu-4-op-4 { grid-area: qu-4-op-4; }
+
+.qu-5 { grid-area: qu-5; }
+
+.qu-5-op-1 { grid-area: qu-5-op-1; }
+
+.qu-5-op-2 { grid-area: qu-5-op-2; }
+
+.qu-5-op-3 { grid-area: qu-5-op-3; }
+
+.qu-5-op-4 { grid-area: qu-5-op-4; }
+
+.navigation { grid-area: navigation; }
