@@ -3,6 +3,10 @@
 Here are the projects it contains in reverse chronological order:
 
 
+## Quiz
+
+[Quiz](https://micael-w.github.io/quiz/) is an app that gets questions from an API, lets the user play the quiz game and then marvel at their results.
+
 ## Corona Tracker
 
 [Corona Tracker](https://micael-w.github.io/corona-tracker/) is an app that gets corona related info from an API and displays it in various ways.
