@@ -1,6 +1,6 @@
-# Hello and welcome to my Github Pages repository
+# Hello and welcome
 
-Here are the projects it contains in reverse chronological order:
+Here are the projects I have made, in reverse chronological order:
 
 
 ## Quiz
