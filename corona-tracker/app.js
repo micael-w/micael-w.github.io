@@ -8,7 +8,7 @@ function getPopulationData() {
     const url = "https://catalog.skl.se/rowstore/dataset/4e7a4004-9ebb-4ae7-8346-9f573aba3951/json";
     const testurl = "popdata.json";
 
-    xhr.open("GET", testurl, true);
+    xhr.open("GET", url, true);
 
     xhr.onload = function() {
         if (this.status === 200) {
@@ -25,7 +25,7 @@ function getCovid19Data() {
     const url = "https://services5.arcgis.com/fsYDFeRKu1hELJJs/arcgis/rest/services/FOHM_Covid_19_FME_1/FeatureServer/1/query?f=geojson&where=1%3D1&outFields=*&orderByFields=Statistikdatum%20desc";
     const testurl = "data.json";
 
-    xhr.open("GET", testurl, true);
+    xhr.open("GET", url, true);
 
     xhr.onload = function() {
          if (this.status === 200) {
