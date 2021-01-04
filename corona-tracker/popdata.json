@@ -1,0 +1,112 @@
+{
+    "resultCount":21,
+    "offset":0,
+    "limit":100,
+    "results":[
+        {
+            "länskod":"01",
+            "region":"Region Stockholm",
+            "folkmängd 31 december 2018":"2 344 124"
+        },
+        {
+            "länskod":"03",
+            "region":"Region Uppsala",
+            "folkmängd 31 december 2018":"376 354"
+        },
+        {
+            "länskod":"04",
+            "region":"Region Sörmland",
+            "folkmängd 31 december 2018":"294 695"
+        },
+        {
+            "länskod":"05",
+            "region":"Region Östergötland",
+            "folkmängd 31 december 2018":"461 583"
+        },
+        {
+            "länskod":"06",
+            "region":"Region Jönköpings län",
+            "folkmängd 31 december 2018":"360 825"
+        },
+        {
+            "länskod":"07",
+            "region":"Region Kronoberg",
+            "folkmängd 31 december 2018":"199 886"
+        },
+        {
+            "länskod":"08",
+            "region":"Region Kalmar län",
+            "folkmängd 31 december 2018":"244 670"
+        },
+        {
+            "länskod":"09",
+            "region":"Region Gotland",
+            "folkmängd 31 december 2018":"59 249"
+        },
+        {
+            "länskod":"10",
+            "region":"Region Blekinge",
+            "folkmängd 31 december 2018":"159 684"
+        },
+        {
+            "länskod":"12",
+            "region":"Region Skåne",
+            "folkmängd 31 december 2018":"1 362 164"
+        },
+        {
+            "länskod":"13",
+            "region":"Region Halland",
+            "folkmängd 31 december 2018":"329 352"
+        },
+        {
+            "länskod":"14",
+            "region":"Västra Götalandsregionen",
+            "folkmängd 31 december 2018":"1 709 814"
+        },
+        {
+            "länskod":"17",
+            "region":"Region Värmland",
+            "folkmängd 31 december 2018":"281 482"
+        },
+        {
+            "länskod":"18",
+            "region":"Region Örebro län",
+            "folkmängd 31 december 2018":"302 252"
+        },
+        {
+            "länskod":"19",
+            "region":"Region Västmanland",
+            "folkmängd 31 december 2018":"273 929"
+        },
+        {
+            "länskod":"20",
+            "region":"Region Dalarna",
+            "folkmängd 31 december 2018":"287 191"
+        },
+        {
+            "länskod":"21",
+            "region":"Region Gävleborg",
+            "folkmängd 31 december 2018":"286 547"
+        },
+        {
+            "länskod":"22",
+            "region":"Region Västernorrland",
+            "folkmängd 31 december 2018":"245 453"
+        },
+        {
+            "länskod":"23",
+            "region":"Region Jämtland Härjedalen",
+            "folkmängd 31 december 2018":"130 280"
+        },
+        {
+            "länskod":"24",
+            "region":"Region Västerbotten",
+            "folkmängd 31 december 2018":"270 154"
+        },
+        {
+            "länskod":"25",
+            "region":"Region Norrbotten",
+            "folkmängd 31 december 2018":"250 497"
+        }
+    ]
+}

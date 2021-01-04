@@ -1,5 +1,23 @@
 window.addEventListener("DOMContentLoaded", getCovid19Data());
-let parsedData;
+window.addEventListener("DOMContentLoaded", getPopulationData());
+let covid19Data;
+let populationData;
+
+function getPopulationData() {
+    const xhr = new XMLHttpRequest;
+    const url = "https://catalog.skl.se/rowstore/dataset/4e7a4004-9ebb-4ae7-8346-9f573aba3951/json";
+    const testurl = "popdata.json";
+
+    xhr.open("GET", testurl, true);
+
+    xhr.onload = function() {
+        if (this.status === 200) {
+            populationData = JSON.parse(this.responseText);
+        }
+    }
+
+    xhr.send();
+}
 
 function getCovid19Data() {
 
@@ -7,11 +25,11 @@ function getCovid19Data() {
     const url = "https://services5.arcgis.com/fsYDFeRKu1hELJJs/arcgis/rest/services/FOHM_Covid_19_FME_1/FeatureServer/1/query?f=geojson&where=1%3D1&outFields=*&orderByFields=Statistikdatum%20desc";
     const testurl = "data.json";
 
-    xhr.open("GET", url, true);
+    xhr.open("GET", testurl, true);
 
     xhr.onload = function() {
          if (this.status === 200) {
-            parsedData = JSON.parse(this.responseText);
+            covid19Data = JSON.parse(this.responseText);
         }
     }
 
@@ -21,6 +39,7 @@ function getCovid19Data() {
 setTimeout(() => {
     document.querySelector(".spinner").style.display = "none";
     printIt();
+    // console.log(populationData)
 }, 3000);
 
 function printIt() {
@@ -33,12 +52,12 @@ function printIt() {
 function printDailyNew() {
 
     let reversedTotal = [];
-    parsedData.features.map(elem => {
+    covid19Data.features.map(elem => {
         reversedTotal.unshift(elem.properties.Totalt_antal_fall);
     });
 
     let reversedDates = [];
-    parsedData.features.map(elem => {
+    covid19Data.features.map(elem => {
         reversedDates.unshift(new Date(elem.properties.Statistikdatum).toLocaleDateString("sv-SE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
     })
 
@@ -72,15 +91,15 @@ function printDailyNew() {
 function printDailySummary() {
 
     let listOfIDs = [];
-    parsedData.features.map(elem => {
+    covid19Data.features.map(elem => {
         listOfIDs.push(elem.id);
     });
 
-    let dailyCases = parsedData.features[0].properties.Totalt_antal_fall;
-    let dailyIntensiveCare = parsedData.features[0].properties.Antal_intensivvardade;
-    let dailyDeceased = parsedData.features[0].properties.Antal_avlidna;
-    let totalCases = parsedData.features[0].properties.Kumulativa_fall;
-    let titleDate = (new Date(parsedData.features[0].properties.Statistikdatum).toLocaleDateString("sv-SE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+    let dailyCases = covid19Data.features[0].properties.Totalt_antal_fall;
+    let dailyIntensiveCare = covid19Data.features[0].properties.Antal_intensivvardade;
+    let dailyDeceased = covid19Data.features[0].properties.Antal_avlidna;
+    let totalCases = covid19Data.features[0].properties.Kumulativa_fall;
+    let titleDate = (new Date(covid19Data.features[0].properties.Statistikdatum).toLocaleDateString("sv-SE", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
 
     document.querySelector(".dashboard-sub-container").innerHTML = `
         <div class="container-sub container-sub-one">
