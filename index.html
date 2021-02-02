@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="himehime.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hime Hime CSS</title>
+</head>
+<body>
+    <header>
+        <!-- <nav class="nav-bar">
+            <div class="nav-logo">
+                <a class="nav-item" href="#">
+                    <img src="./img/himehime.jpg" height="64px" alt="">
+                </a>
+
+                <a href="#" class="nav-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <div class="nav-start">
+                    <a href="#" class="a-nav nav-item">Home</a>
+                    <a href="#" class="a-nav nav-item">About</a>
+
+                    <div class="nav-item nav-has-submenu nav-hover">
+                        <a href="#" class="a-nav nav-link">More</a>
+                        <div class="nav-submenu"></div>
+                        <div class="nav-item">Contact</div>
+                        <div class="nav-item">Directions</div>
+                        <div class="nav-item">Documentation</div>
+                    </div>
+                </div>
+
+                <div class="nav-end">
+                    <div class="nav-item">
+                        <button class="btn-blue">Sign up!</button>
+                        <button class="btn-plain">Log in!</button>
+                    </div>
+                </div>
+            </div>
+        </nav> -->
+    </header>
+
+    <div class="bg-blur-6 full-vh center-xy if-white-64">
+        <h1>Hime Hime CSS</h1>
+    </div>
+    
+    <div class="row">
+        <div class="grid">
+            <div class="if-white-64 mt-2 p-2">
+                <h3>What's this?</h3>
+                <p class="mr-24p">Hime Hime CSS is a small and opinionated CSS framework. The emphasis is on colors and contrast dynamics, while still trying to be a sufficient starting point for most projects. This is very much a work in progress.</p>
+                <h3 class="mt-2">Another one? Why?</h3>
+                <p class="mr-24p">I'm studying front-end development and I don't like the current frameworks available. I ended up copypasting the same custom css from one project to the next. So I created this framework instead. You can use it if you like!</p>
+                <h3 class="mt-2">Ok whatever, walk me through it then.</h3>
+                <p class="mr-24p">Sure, let's go!</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid"><h3 class="if-white-64 p-2">Grids</h3></div>
+    </div>
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Responsive grid</h5></div>
+    </div>
+    <div class="row">
+        <div class="grid"><h4 class="hh-ac-4">Hime Hime CSS comes with a responsive, mobile-first (media queries with <code>min-width</code> and not <code>max-width</code>), 12 column grid system, with <code>4</code>  breakpoints at <code>1</code> 768px, <code>2</code> 960px, <code>3</code> and 1200px <code>4</code>.</h4></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-1"><span>1</span></div>
+        <div class="test-grid grid-11"><span>11</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-2"><span>2</span></div>
+        <div class="test-grid grid-10"><span>10</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-3"><span>3</span></div>
+        <div class="test-grid grid-9"><span>9</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-4"><span>4</span></div>
+        <div class="test-grid grid-8"><span>8</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-5"><span>5</span></div>
+        <div class="test-grid grid-7"><span>7</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-6"><span>6</span></div>
+        <div class="test-grid grid-6"><span>6</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-7"><span>7</span></div>
+        <div class="test-grid grid-5"><span>5</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-8"><span>8</span></div>
+        <div class="test-grid grid-4"><span>4</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-9"><span>9</span></div>
+        <div class="test-grid grid-3"><span>3</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-10"><span>10</span></div>
+        <div class="test-grid grid-2"><span>2</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-11"><span>11</span></div>
+        <div class="test-grid grid-1"><span>1</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-12"><span>12</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;div class="row"&gt;
+    &lt;div class="grid-1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-11"&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="grid-2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-10"&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+...
+&lt;div class="row"&gt;
+    &lt;div class="grid-12"&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Offsetting</h5></div>
+    </div>
+
+    <div class="row">
+        <div class="grid mt-2"><h4 class="hh-ac-4">You can offset the columns to the right by adding <code>grid-offset-1</code> through <code>grid-offset-11</code> to the column that you want margin-left added to (Just make sure it adds up to &lt;=12).</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-3"><span>3</span></div>
+        <div class="test-grid grid-offset-5 grid-4"><span>4 offset by 5</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-1"><span>1</span></div>
+        <div class="test-grid grid-offset-6 grid-3"><span>3 offset by 6</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-offset-3 grid-4"><span>4 offset by 3</span></div>
+        <div class="test-grid grid-offset-2 grid-3"><span>3 offset by 2</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;div class="row"&gt;
+    &lt;div class="grid-3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-offset-5 grid-4"&gt;&lt;span&gt;4 offset by 5&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="grid-1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-offset-6 grid-3"&gt;&lt;span&gt;3 offset by 6&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="grid-offset-3 grid-4"&gt;&lt;span&gt;4 offset by 3&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-offset-2 grid-3"&gt;&lt;span&gt;3 offset by 2&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Alignment</h5></div>
+    </div>
+
+    <div class="row">
+        <div class="grid mt-2"><h4 class="hh-ac-4">You can also align the columns using <code>row-align-left</code>, <code>row-align-center</code>, and <code>row-align-right</code> to apply justify-content to a row's child elements (the columns)</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row row-align-left">
+        <div class="test-grid grid-4"><span>flex-start</span></div>
+    </div>
+    <div class="row row-align-center">
+        <div class="test-grid grid-4"><span>center</span></div>
+    </div>
+    <div class="row row-align-right">
+        <div class="test-grid grid-4"><span>flex-end</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;div class="row row-align-left"&gt;
+    &lt;div class="grid-4"&gt;&lt;span&gt;flex-start&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row row-align-center"&gt;
+    &lt;div class="grid-4"&gt;&lt;span&gt;center&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row row-align-right"&gt;
+    &lt;div class="grid-4"&gt;&lt;span&gt;flex-end&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Fluid grids</h5></div>
+    </div>
+
+    <div class="row">
+        <div class="grid mt-2"><h4 class="hh-ac-4">Not ready to settle? Want a column to auto-resize? No problem! Just use <code>grid</code> and the column will occupy all available space.</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-1"><span>1</span></div>
+        <div class="test-grid grid-2"><span>2</span></div>
+        <div class="test-grid grid"><span>grid</span></div>
+        <div class="test-grid grid-3"><span>3</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-6"><span>6</span></div>
+        <div class="test-grid grid-2"><span>2</span></div>
+        <div class="test-grid grid-1"><span>1</span></div>
+        <div class="test-grid grid"><span>grid</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-2 grid-offset-2"><span>2 offset by 2</span></div>
+        <div class="test-grid grid"><span>grid</span></div>
+        <div class="test-grid grid-4"><span>3</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+    &lt;div class="row"&gt;
+        &lt;div class="grid-1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid-2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid"&gt;&lt;span&gt;grid&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid-3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="grid-6"&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid-2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid-1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid"&gt;&lt;span&gt;grid&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="grid-2 grid-offset-2"&gt;&lt;span&gt;2 offset by 2&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid"&gt;&lt;span&gt;grid&lt;/span&gt;&lt;/div&gt;
+        &lt;div class="grid-4"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Mobile overrides</h5></div>
+    </div>
+
+    <div class="row">
+        <div class="grid mt-2"><h4 class="hh-ac-4">You can also force a variable column width for mobile, instead of defaulting to 100%. The mobile grid has 6 columns instead of 12. You can use it as an override with <code>grid-1-mobile</code> through <code>grid-6-mobile</code>. In addition, you can offset columns by using <code>grid-1-mobile-offset</code> through <code>grid-5-mobile-offset</code>. Again, make sure it adds up to &lt;=6.</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-4 grid-2-mobile"><span>4 (2)</span></div>
+        <div class="test-grid grid-2 grid-4-mobile"><span>2 (4)</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-11 grid-3-mobile"><span>11 (3)</span></div>
+        <div class="test-grid grid-1 grid-3-mobile"><span>1 (3)</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid-3 grid-offset-3 grid-2-mobile"><span>3 offset by 3  (2)</span></div>
+        <div class="test-grid grid-6 grid-2-mobile grid-2-mobile-offset"><span>6 (2 offset by 2)</span></div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;div class="row"&gt;
+    &lt;div class="grid-4 grid-2-mobile"&gt;&lt;span&gt;4 (2)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-2 grid-4-mobile"&gt;&lt;span&gt;2 (4)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="grid-11 grid-3-mobile"&gt;&lt;span&gt;11 (3)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-1 grid-3-mobile"&gt;&lt;span&gt;1 (3)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="grid-3 grid-offset-3 grid-2-mobile"&gt;&lt;span&gt;3 offset by 3 (2)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class="grid-6 grid-2-mobile grid-2-mobile-offset"&gt;&lt;span&gt;6 (2 offset by 2)&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid"><h3 class="if-white-64 p-2">Tables</h3></div>
+    </div>
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Making a table</h5></div>
+    </div>
+    <div class="row">
+        <div class="grid"><h4 class="hh-ac-4">Hime Hime CSS has a simple table layout. But please remember to use a properly constructed table using <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, and <code>&lt;tbody&gt;</code> as in the code example below.</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row">
+        <div class="grid">
+            <table class="full-width if-white-64">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Running time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1984</td>
+                        <td>Nausicaä of the Valley of the Wind</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>117 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1986</td>
+                        <td>Castle in the Sky</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>124 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1988</td>
+                        <td>Grave of the Fireflies</td>
+                        <td>Isao Takahata</td>
+                        <td>88 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1989</td>
+                        <td>Kiki's Delivery Service</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>103 minutes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Year&lt;/th&gt;
+            &lt;th&gt;Title&lt;/th&gt;
+            &lt;th&gt;Director&lt;/th&gt;
+            &lt;th&gt;Running time&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1984&lt;/td&gt;
+            &lt;td&gt;Nausicaä of the Valley of the Wind&lt;/td&gt;
+            &lt;td&gt;Hayao Miyazaki&lt;/td&gt;
+            &lt;td&gt;117 minutes&lt;/td&gt;
+        &lt;/tr&gt;
+        ...
+        &lt;tr&gt;
+            &lt;td&gt;1989&lt;/td&gt;
+            &lt;td&gt;Kiki's Delivery Service&lt;/td&gt;
+            &lt;td&gt;Hayao Miyazaki&lt;/td&gt;
+            &lt;td&gt;103 minutes&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Adding stripes to a table</h5></div>
+    </div>
+
+    <div class="row">
+        <div class="grid"><h4 class="hh-ac-4">You can add stripes by simply adding <code>stripes</code> to the table element.</h4 class="hh-ac-4"></div>
+    </div>
+    <div class="row">
+        <div class="grid">
+            <table class="stripes full-width if-white-64">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Running time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1984</td>
+                        <td>Nausicaä of the Valley of the Wind</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>117 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1986</td>
+                        <td>Castle in the Sky</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>124 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1988</td>
+                        <td>Grave of the Fireflies</td>
+                        <td>Isao Takahata</td>
+                        <td>88 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>1989</td>
+                        <td>Kiki's Delivery Service</td>
+                        <td>Hayao Miyazaki</td>
+                        <td>103 minutes</td>
+                    </tr>
+                </tbody>    
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="test-grid grid">
+            <pre class="mt-2"><code>
+&lt;table class="stripes"&gt;
+...
+&lt;/table&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid"><h3 class="if-white-64 p-2">Typography</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="grid">
+            <div class="if-white-64 p-2">
+               <p class="mr-24p"> Hime Hime CSS uses IBM Plex Sans Condensed as the main font, as well as IBM Plex Mono as its monospace font, both served by Google Fonts by default. The <code>font-size</code> is set to 62.5% which means that <code>1.0rem</code> is 10px and not 16px. The base text is set to <code>1.4rem</code> over <code>1.5rem</code> line height.</p>
+               <hr>
+               <p class="mr-24p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellat error minima aperiam impedit, ipsa assumenda a maiores deleniti accusantium nemo corrupti nobis modi iure possimus, recusandae velit harum exercitationem. Laudantium eius quisquam molestias aspernatur, id dolore maxime distinctio aut quae dicta alias quo neque impedit, exercitationem ipsam numquam adipisci quis odit ducimus sed! Sint modi quas laudantium quos in tempora sed expedita distinctio nesciunt. Explicabo, est nisi? Porro dicta repudiandae omnis hic consequatur labore obcaecati corporis esse numquam, voluptatem ex laboriosam nihil suscipit nisi! Est reprehenderit a at.</p>
+               <hr>
+               <p class="mr-24p">The heading elements are manually set with <code>letter-spacing</code>, <code>margin-top</code>, <code>margin-bottom</code>, and <code>line-height</code>, and they look like this:</p>
+               <h1>Heading 1</h1>
+               <p>Heading 1 is set to <code>4.8rem</code></p>
+               <h2>Heading 2</h2>
+               <p>Heading 2 is set to <code>3.6rem</code></p>
+               <h3>Heading 3</h3>
+               <p>Heading 3 is set to <code>3.2rem</code></p>
+               <h4>Heading 4</h4>
+               <p>Heading 4 is set to <code>2.8rem</code></p>
+               <h5>Heading 5</h5>
+               <p>Heading 5 is set to <code>2.2rem</code></p>
+               <h6>Heading 6</h6>
+               <p>Heading 6 is set to <code>1.8rem</code></p>
+               <hr>
+               <p class="mr-24p">Inline code blocks <code>look like this</code>. <a href="#">Anchor text looks like this by default.</a> You can use<code>a-sub</code> to make <a href="#" class="a-sub">links more subtle, like this.</a><span> </span><u>Underlined</u>, <strong>strong</strong>, and <em>emphasised</em> text look like this.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="grid"><h3 class="if-white-64 p-2">Buttons</h3></div>
+    </div>
+    <div class="row">
+        <div class="grid-3"><h5 class="if-white-64 p-1">Different kind of buttons</h5></div>
+    </div>
+    <div class="row">
+        <div class="grid">
+            <div class="if-white-64 p-2">
+                <p>Buttons in Hime Hime CSS come in 4+1 colors, each with a subtle animation.</p>
+                    <button class="mr-1 btn-green">btn-green</button>
+                    <button class="mr-1 btn-yellow">btn-yellow</button>
+                    <button class="mr-1 btn-red">btn-red</button>
+                    <button class="mr-1 btn-blue">btn-blue</button>
+                    <button class="btn-plain">btn-plain</button>
+                <p>Without a class to specify a color the button will default to blue. That's pretty much all there is to know about buttons.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-vh center-xy if-white">
+        <p>Perfectly centered.
+        </p>
+    </div>
+
+    <div class="full-vh center-xy if-white-64">
+        <img src="./img/logo.png" alt="" width="200px">
+    </div>
+
+
+
+</body>
+</html>
