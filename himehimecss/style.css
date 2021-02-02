@@ -1,0 +1,19 @@
+.test-grid span {
+    padding: 6px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    background-color: var(--interface-l-64);
+}
+
+body {
+    /*     background: rgb(192,224,202); */
+/*     background: linear-gradient(56deg, rgba(192,224,202,1) 0%, rgba(176,224,228,1) 48%, rgba(234,204,212,1) 100%); */
+    /* background: linear-gradient(56deg, rgba(255, 202, 76, 1) 0%, rgba(73, 182, 203, 1) 48%, rgba(233, 136, 147, 1) 100%); */
+
+    color: var(--dark);
+    background-image: url("./img/color-bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
