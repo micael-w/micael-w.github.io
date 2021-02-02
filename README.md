@@ -4,7 +4,7 @@ Here are the projects I have made, in reverse chronological order:
 
 ## Hime Hime CSS
 
-[Hime Hime CSS](https://micael-w.github.io/quiz/) is a minimalistic CSS framework, a work in progress to say the least, but a framework nonetheless:3
+[Hime Hime CSS](https://micael-w.github.io/himehimecss/) is a minimalistic CSS framework, a work in progress to say the least, but a framework nonetheless:3
 
 It's also hosted here: [Hime Hime CSS](https://www.himehi.me/css/)
 
