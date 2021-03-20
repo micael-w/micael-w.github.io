@@ -2,6 +2,14 @@
 
 Here are the projects I have made, in reverse chronological order:
 
+## Github Finder React
+
+This is an app that finds users on Github. It uses Context state, axios, hooks, probably something else that I forgot.
+
+Hosted on Netlify: [https://githubfinder30xdue7362udhf93.netlify.app/](https://githubfinder30xdue7362udhf93.netlify.app/)
+
+Repo: https://github.com/micael-w/githubfinderreact
+
 ## Hime Hime CSS
 
 [Hime Hime CSS](https://micael-w.github.io/himehimecss/) is a minimalistic CSS framework, a work in progress to say the least, but a framework nonetheless
