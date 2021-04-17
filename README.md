@@ -4,7 +4,7 @@ Here are the projects I have made, in reverse chronological order:
 
 ## Github Finder React
 
-This is an app that finds users on Github. It uses Context state, axios, hooks, probably something else that I forgot.
+This is an app that finds users on Github. It uses Context state, axios, hooks, probably something else that I forgot. Please note that this is from a Udemy course.
 
 Hosted on Netlify: [https://githubfinder30xdue7362udhf93.netlify.app/](https://githubfinder30xdue7362udhf93.netlify.app/)
 
