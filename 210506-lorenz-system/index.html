@@ -180,7 +180,7 @@
         extendPath(path, 12); // 10
         const scaled = scale(path, 1000);
         draw(scaled);
-        while (path.length > 9000) path.shift();
+        while (path.length > 1000) path.shift();
         setTimeout(step, 1000 / 60);
       }
       step();
