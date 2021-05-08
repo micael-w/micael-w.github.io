@@ -76,9 +76,11 @@
 
       const dt = 0.001; // 0.01          delta time
 
-      // these values are all positive
+      // these values need to be all positive
       // the values here (and nearby values) will cause the
-      // system to exhibit chaotic behaviour
+      // system to exhibit chaotic behaviour, which of course is
+      // the desired behaviour since this is chaos theory
+      // other values to try can be found in the wikipedia article
       const sigma = 10; // 10
       const rho = 38; // 28
       const beta = 8 / 3; // 8/3
@@ -90,6 +92,10 @@
         // change of x, y and z, here plotted in a "3-axis"
         // graph using html canvas
         // it's easier to see with rotation turned on
+        
+        // x, y and z aren't inherently axes, but 3 values
+        // that are closely related
+        // it's easier to see if you plot them
 
         x += sigma * (y - x) * dt;
         y += (x * (rho - z) - y) * dt;
@@ -163,6 +169,7 @@
         path.map(Map).forEach((p) => {
           
           ctx.lineTo(p[0], p[1]);
+          // uncomment line below for a more sophisticated animation
           ctx.closePath() // turn this off please sir :-DD
 
           // I can't figure out how to make the current lineTo change color
@@ -180,6 +187,7 @@
         extendPath(path, 12); // 10
         const scaled = scale(path, 1000);
         draw(scaled);
+        // number of concurrent paths on screen
         while (path.length > 2000) path.shift();
         setTimeout(letsGo, 700 / 60);
       }
