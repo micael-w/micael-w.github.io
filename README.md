@@ -2,6 +2,10 @@
 
 Here are the projects I have made, in reverse chronological order:
 
+## Lorenz System somewhat modified and freely interpreted
+
+The [Lorenz system](https://micael-w.github.io/210506-lorenz-system/) is a system of ordinary differential equations first studied by Edward Lorenz. It is notable for having chaotic solutions for certain parameter values and initial conditions. In particular, the Lorenz attractor is a set of chaotic solutions of the Lorenz system. Nu ska jag börja med inlämningsuppgiften:-DDD
+
 ## Github Finder React
 
 This is an app that finds users on Github. It uses Context state, axios, hooks, probably something else that I forgot. Please note that this is from a Udemy course.
