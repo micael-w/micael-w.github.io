@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorenz System</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+      :root {
+        --dark: #454d63;
+        --interface-l-64: rgba(248, 251, 248, 0.88);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-size: 1.4em;
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: "IBM Plex Sans Condensed", sans-serif;
+      }
+
+      .block {
+        background-color: var(--interface-l-64);
+        color: var(--dark);
+        display: block;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        padding-top: 30px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        /* background-color: #edf8fc; */
+      }
+      .full-width {
+        width: 100%;
+      }
+
+      .full-vh {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block">
+      <h1>
+        LORENZ SYSTEM
+      </h1>
+    </div>
+    <div class="container full-width full-vh">
+      <div>
+        <canvas id="canvas" width="1000" height="1000"> </canvas>
+      </div>
+    </div>
+    <script>
+      // define context
+      const ctx = canvas.getContext("2d");
+      // set stroke color
+      let strokeColorAlpha = 0;
+      ctx.strokeStyle = `rgba(0, 53, 155, 0.05)`;
+
+      const dt = 0.001; // 0.01          delta time
+
+      // these values are all positive
+      // the values here (and nearby values) will cause the
+      // system to exhibit chaotic behaviour
+      const sigma = 10; // 10
+      const rho = 38; // 28
+      const beta = 8 / 3; // 8/3
+
+      // integrate trajectory of lorenz system
+      function integrate({ x, y, z }) {
+        // these three differential equations are known as
+        // the lorenz equations, and describe the rate of
+        // change of x, y and z, here plotted in a "3-axis"
+        // graph using html canvas
+        // it's easier to see with rotation turned on
+
+        x += sigma * (y - x) * dt;
+        y += (x * (rho - z) - y) * dt;
+        z += (x * y - beta * z) * dt;
+        return { x, y, z };
+      }
+
+      function extendPath(path, steps) {
+        // loop through array with length of steps
+        [...Array(steps)].forEach(() => {
+          // save previous p
+          const lastP = path[path.length - 1];
+          // integrate trajectory for p
+          let p = integrate(lastP);
+
+          // this just literally fucks random shit up
+          // if (Math.random() * 200 < 2) {
+          //   console.log("fuck up in x");
+          //   p.x -= 0.3;
+          // }
+          
+          // if (Math.random() * 300 < 2) {
+          //   console.log("fuck up in y");
+          //   p.y += 0.5;
+          // }
+
+          if (Math.random() * 1050 < 2) {
+            console.log("fuck up in z");
+            p.z += 10.3;
+            ctx.strokeStyle = `rgba(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, .005)`;
+          }
+          // append p
+          path.push(p);
+        });
+        return path;
+      }
+
+      // normalize by first getting min/max values
+      function scale(points, size) {
+        const minX = Math.min(...points.map(({ x, y, z }) => x));
+        const maxX = Math.max(...points.map(({ x, y, z }) => x));
+        const minY = Math.min(...points.map(({ x, y, z }) => y));
+        const maxY = Math.max(...points.map(({ x, y, z }) => y));
+        const minZ = Math.min(...points.map(({ x, y, z }) => z));
+        const maxZ = Math.max(...points.map(({ x, y, z }) => z));
+
+        // this will return the normalized series of points scaled
+        // between 0 and 1
+        const s = (value, minValue, maxValue) =>
+          (size * (value - minValue)) / (maxValue - minValue);
+
+        return points.map(({ x, y, z }) => {
+          // use function to return normalized values
+          x = s(x, minX, maxX);
+          //strokeColorAlpha = (x / 500).toFixed(2);
+          y = s(y, minY, maxY);
+          z = s(z, minZ, maxZ);
+          return { x, y, z };
+        });
+      }
+
+      let q = 0;
+      function draw(path) {
+        q += 0.007; // apply rotation with trigonometry witchcraft
+        const Map = ({ x, y, z }) => [
+          (x - 300) * Math.cos(q) - (y - 300) * Math.sin(q) + 300,
+          z,
+        ];
+
+        ctx.beginPath();
+        path.map(Map).forEach((p) => {
+          
+          ctx.lineTo(p[0], p[1]);
+          ctx.closePath() // turn this off please sir :-DD
+
+          // I can't figure out how to make the current lineTo change color
+          // without changing the entire thing but this is how I would do it
+          // if I actually knew how the canvas api worked:^)
+
+          // ctx.strokeStyle = `rgba(0, 153, 255, ${strokeColorAlpha})`;
+        });
+        ctx.stroke();
+      }
+
+      const path = [{ x: 1, y: 2, z: 1 }];
+      function step() {
+        ctx.clearRect( 0, 0, canvas.width, canvas.height);
+        extendPath(path, 12); // 10
+        const scaled = scale(path, 1000);
+        draw(scaled);
+        while (path.length > 9000) path.shift();
+        setTimeout(step, 1000 / 60);
+      }
+      step();
+    </script>
+  </body>
+</html>
