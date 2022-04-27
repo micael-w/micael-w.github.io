@@ -14,12 +14,6 @@ Hosted on Netlify: [https://githubfinder30xdue7362udhf93.netlify.app/](https://g
 
 Repo: https://github.com/micael-w/githubfinderreact
 
-## Hime Hime CSS
-
-[Hime Hime CSS](https://micael-w.github.io/himehimecss/) is a minimalistic CSS framework, a work in progress to say the least, but a framework nonetheless
-
-It's also hosted here: [Hime Hime CSS](https://www.himehi.me/css/)
-
 ## Quiz (school project)
 
 [Quiz](https://micael-w.github.io/quiz/) is an app that gets questions from an API, lets the user play the quiz game and then marvel at their results.
